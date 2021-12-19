@@ -16,6 +16,8 @@
 
 ![image-20211204223119115](README.assets/image-20211204223119115.png)
 
+![image-20211219170437694](README.assets/image-20211219170437694.png)
+
 三、快速代码命令
 
 1. 快速创建 div
@@ -100,4 +102,17 @@ div#root
 ![image-20211219143712058](README.assets/image-20211219143712058.png)
 
  ![image-20211219152313586](README.assets/image-20211219152313586.png)
+
+#### 1.7.3 监视属性
+
+![image-20211219165859513](README.assets/image-20211219165859513.png)
+
+1. 通过vm对象的$watch() 或 watch配置来监视指定属性
+2. 当属性变化时，回调函数自动调用，在函数内部计算
+
+![image-20211219172840971](README.assets/image-20211219172840971.png)
+
+ ![image-20211219174106883](README.assets/image-20211219174106883.png)
+
+
 

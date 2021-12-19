@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../js/vue.js"></script>
+    <title>姓名案例-插值语法实现</title>
+  </head>
+  <body>
+    <div id="root">
+      姓 <input type="text" v-model="fastName" /><br /><br />
+      名 <input type="text" v-model="lastName" /><br /><br />
+      测试： <input type="text" v-model="x" /><br /><br />
+      姓名: <span>{{fullName}}</span><br /><br />
+      姓名: <span>{{fullName}}</span><br /><br />
+      姓名: <span>{{fullName}}</span><br /><br />
+      姓名: <span>{{fullName}}</span><br /><br />
+      姓名: <span>{{fullName}}</span><br /><br />
+    </div>
+    <script>
+      Vue.config.productionTip = false;
+      const vm = new Vue({
+        el: "#root",
+        data: {
+          fastName: "张",
+          lastName: "三",
+          x: "test",
+        },
+        computed: {
+          fullName: {
+            // get 有什么作用？只要有人读取fallName 就会调用 get 方法，返回值就作为fallName的值
+            // get 什么时候调用？1. 初次调用 fallName时， 2. 所依赖的数据发生变化时
+            get() {
+              console.log("get 被调用了！");
+              return this.fastName.slice(0, 4) + "-" + this.lastName;
+            },
+            set(value) {
+              const v = console.log("set 被调用了！", value);
+              this.fastName, this.lastName = vv;
+            },
+          },
+        },
+      });
+      console.log(vm);
+    </script>
+  </body>
+</html>

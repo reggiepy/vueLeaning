@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件修饰符</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <style>
+        .demon1{
+            height: 50px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h1>欢迎来到{{name}}</h1>
+        <a href="https://www.baidu.com" @click.prevent="showInfo">点我提示信息</a>
+        <button @click="showInfo" class="demon1">点我提示</button>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    const vm = new Vue({
+        el: "#root",
+        data: {
+            name: "wt"
+       },
+       methods: {
+           showInfo(e){
+            //    e.preventDefault()
+               alert("同学你好！")
+           }
+       }
+    })
+</script>
+</html>
